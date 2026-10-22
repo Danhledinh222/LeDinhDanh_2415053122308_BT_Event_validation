@@ -6,6 +6,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Toast
+import android.content.Intent
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.example.ledinhdanh_2415053122308_bt_event_validation.databinding.ActivityMainBinding
@@ -30,6 +31,14 @@ class MainActivity : AppCompatActivity() {
 
         setupInsets()
         setupForm()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (::binding.isInitialized) {
+            binding.btnDangKy.isEnabled = true
+        }
     }
 
     private fun setupInsets() {
@@ -92,7 +101,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onFormValid() {
-        Toast.makeText(this, "Tất cả thông tin đều hợp lệ", Toast.LENGTH_SHORT).show()
+        if (!binding.btnDangKy.isEnabled) return
+
+        val hoTen = StudentValidator.cleanText(binding.edtHoTen.text?.toString().orEmpty())
+        val email = binding.edtEmail.text?.toString().orEmpty().trim()
+        val sdt = StudentValidator.normalizePhone(binding.edtSdt.text?.toString().orEmpty())
+        val msv = binding.edtMsv.text?.toString().orEmpty().trim()
+        val lop = StudentValidator.cleanText(binding.edtLop.text?.toString().orEmpty())
+
+        binding.btnDangKy.isEnabled = false
+
+        WindowCompat.getInsetsController(window, binding.root).hide(WindowInsetsCompat.Type.ime())
+
+        val intent = Intent(this, ChiTietActivity::class.java).apply {
+            putExtra(ChiTietActivity.EXTRA_HO_TEN, hoTen)
+            putExtra(ChiTietActivity.EXTRA_EMAIL, email)
+            putExtra(ChiTietActivity.EXTRA_SDT, sdt)
+            putExtra(ChiTietActivity.EXTRA_MSV, msv)
+            putExtra(ChiTietActivity.EXTRA_LOP, lop)
+        }
+
+        startActivity(intent)
     }
 
 }
