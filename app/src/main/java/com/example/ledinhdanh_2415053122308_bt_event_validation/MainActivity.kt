@@ -7,6 +7,8 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Toast
 import android.content.Intent
+import android.view.inputmethod.EditorInfo
+import androidx.core.widget.addTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.example.ledinhdanh_2415053122308_bt_event_validation.databinding.ActivityMainBinding
@@ -14,6 +16,7 @@ import com.example.ledinhdanh_2415053122308_bt_event_validation.databinding.Acti
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var hasSubmitted = false
     private data class Field(
         val layout: TextInputLayout,
         val input: TextInputEditText,
@@ -76,8 +79,25 @@ class MainActivity : AppCompatActivity() {
             Field(binding.tilLop, binding.edtLop, StudentValidator::lopError)
         )
 
+        fields.forEach { field ->
+            field.input.addTextChangedListener {
+                if (hasSubmitted) {
+                    validateField(field)
+                }
+            }
+        }
+
         binding.btnDangKy.setOnClickListener {
             submitRegistration()
+        }
+
+        binding.edtLop.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                submitRegistration()
+                true
+            } else {
+                false
+            }
         }
     }
 
@@ -88,6 +108,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun submitRegistration() {
+        if (!binding.btnDangKy.isEnabled) return
+
+        hasSubmitted = true
+
         val results = fields.map { validateField(it) }
         val firstInvalidIndex = results.indexOfFirst { !it }
 
