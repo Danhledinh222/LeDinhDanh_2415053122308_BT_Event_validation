@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootChiTiet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/student_background"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            style="@style/StudentTitle"
+            android:text="Chi tiết sinh viên" />
+
+        <TextView
+            style="@style/StudentSubtitle"
+            android:text="Đăng kí thành công! Thông tin của bạn:"
+            android:textColor="@color/student_primary" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/student_surface"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/student_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    style="@style/StudentDetailLabel"
+                    android:text="HỌ VÀ TÊN" />
+
+                <TextView
+                    android:id="@+id/tvHoTen"
+                    style="@style/StudentDetailValue" />
+
+                <TextView
+                    style="@style/StudentDetailLabel"
+                    android:text="EMAIL" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    style="@style/StudentDetailValue" />
+
+                <TextView
+                    style="@style/StudentDetailLabel"
+                    android:text="SỐ ĐIỆN THOẠI" />
+
+                <TextView
+                    android:id="@+id/tvSdt"
+                    style="@style/StudentDetailValue" />
+
+                <TextView
+                    style="@style/StudentDetailLabel"
+                    android:text="MÃ SINH VIÊN" />
+
+                <TextView
+                    android:id="@+id/tvMsv"
+                    style="@style/StudentDetailValue" />
+
+                <TextView
+                    style="@style/StudentDetailLabel"
+                    android:text="LỚP" />
+
+                <TextView
+                    android:id="@+id/tvLop"
+                    style="@style/StudentDetailValue" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVeDangKy"
+            style="@style/StudentButton"
+            android:layout_marginTop="24dp"
+            android:text="Về màn hình Đăng kí" />
+
+        <TextView
+            style="@style/StudentAuthor"
+            android:text="@string/student_author" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

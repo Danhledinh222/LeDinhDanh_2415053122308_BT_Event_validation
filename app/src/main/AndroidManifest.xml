@@ -7,21 +7,21 @@
         android:label="@string/student_app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentValidation">
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="Đăng kí"
             android:windowSoftInputMode="adjustResize">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
+        <activity
+            android:name=".ChiTietActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
