@@ -1,19 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/student_background"
+    android:clipToPadding="false"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            style="@style/StudentTitle"
+            android:text="Đăng kí sinh viên" />
+
+        <TextView
+            style="@style/StudentSubtitle"
+            android:text="Nhập đầy đủ thông tin để đăng kí và xem hồ sơ chi tiết." />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/student_surface"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/student_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilHoTen"
+                    style="@style/StudentField"
+                    android:hint="Họ và tên"
+                    app:placeholderText="Lê Đình Danh">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtHoTen"
+                        style="@style/StudentInput"
+                        android:inputType="textPersonName|textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/StudentField"
+                    android:hint="Email"
+                    app:placeholderText="danh@gmail.com">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtEmail"
+                        style="@style/StudentInput"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilSdt"
+                    style="@style/StudentField"
+                    android:hint="Số điện thoại"
+                    app:placeholderText="0901234567">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtSdt"
+                        style="@style/StudentInput"
+                        android:inputType="phone" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMsv"
+                    style="@style/StudentField"
+                    android:hint="Mã sinh viên"
+                    app:placeholderText="2415053122308">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtMsv"
+                        style="@style/StudentInput"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLop"
+                    style="@style/StudentField"
+                    android:hint="Lớp"
+                    app:placeholderText="CNTT01">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtLop"
+                        style="@style/StudentInput"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDangKy"
+                    style="@style/StudentButton"
+                    android:layout_marginTop="6dp"
+                    android:text="Đăng kí" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            style="@style/StudentAuthor"
+            android:text="@string/student_author" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
