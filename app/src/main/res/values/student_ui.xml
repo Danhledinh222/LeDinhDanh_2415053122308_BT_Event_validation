@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="student_app_name">LeDinhDanh_2415053122308_BT_Event_validation</string>
+    <string name="student_author">Lê Đình Danh\nMSV: 2415053122308</string>
+
+    <color name="student_background">#F3F6FA</color>
+    <color name="student_surface">#FFFFFF</color>
+    <color name="student_primary">#0F766E</color>
+    <color name="student_text">#172B4D</color>
+    <color name="student_muted">#64748B</color>
+    <color name="student_border">#D9E2EC</color>
+
+    <style name="Theme.StudentValidation"
+        parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/student_primary</item>
+        <item name="colorPrimaryVariant">@color/student_primary</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/student_primary</item>
+        <item name="colorSurface">@color/student_surface</item>
+        <item name="colorOnSurface">@color/student_text</item>
+        <item name="colorError">#B3261E</item>
+
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">@color/student_background</item>
+        <item name="android:colorBackground">@color/student_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="StudentTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/student_text</item>
+    </style>
+
+    <style name="StudentSubtitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/student_muted</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+    <style name="StudentField"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+
+        <item name="boxBackgroundColor">@color/student_surface</item>
+        <item name="hintTextColor">@color/student_primary</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="StudentInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/student_text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="StudentButton"
+        parent="Widget.MaterialComponents.Button">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="backgroundTint">@color/student_primary</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="StudentDetailLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/student_muted</item>
+    </style>
+
+    <style name="StudentDetailValue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/student_text</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="StudentAuthor" parent="StudentSubtitle">
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>
